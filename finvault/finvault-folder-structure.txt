@@ -1,0 +1,102 @@
+finvault/
+├── index.php                      # Entry point → redirects to customer portal
+├── README.md                      # Setup & documentation
+│
+├── admin/                         # Admin portal
+│   ├── index.php                  # Admin login
+│   ├── dashboard.php              # KPI dashboard
+│   ├── analytics.php              # 10 Chart.js charts + executive KPIs
+│   ├── users.php                  # User management
+│   ├── accounts.php               # Freeze/unfreeze, balance adjust, history
+│   ├── transactions.php           # Monitoring + large-transfer flags
+│   ├── loans.php                  # Approve/reject with remarks
+│   ├── cards.php                  # Card approval workflow
+│   ├── kyc.php                    # KYC review queue
+│   ├── logout.php
+│   └── includes/
+│       ├── admin_header.php       # Sidebar, topbar, global search
+│       └── admin_footer.php
+│
+├── customer/                      # Customer portal
+│   ├── index.php                  # Login / register / OTP verify / forgot / reset
+│   ├── dashboard.php              # Welcome, stats cards, quick actions
+│   ├── accounts.php               # Account details + summary PDF
+│   ├── transfer.php               # Transfer flow + QR pay
+│   ├── beneficiaries.php          # Add/edit/delete + autocomplete
+│   ├── transactions.php           # History, filters, PDF export
+│   ├── loans.php                  # Apply + live EMI calculator
+│   ├── cards.php                  # Request / block / unblock
+│   ├── kyc.php                    # Document uploads
+│   ├── profile.php                # Edit profile, change password
+│   ├── notifications.php          # Notification center
+│   ├── logout.php
+│   └── includes/
+│       ├── customer_header.php
+│       └── customer_footer.php
+│
+├── api/                           # AJAX endpoints
+│   ├── search.php                 # Smart global search (role-aware)
+│   ├── autocomplete.php           # Beneficiary suggestions
+│   ├── transfer.php               # JSON transfer endpoint (QR pay)
+│   ├── analytics.php              # Chart data series
+│   └── statement.php              # TCPDF statements/receipts/reports
+│
+├── includes/                      # Core classes (.htaccess protected)
+│   ├── config.php                 # DB, SMTP, constants, autoloader, helpers
+│   ├── Database.php               # PDO singleton
+│   ├── Session.php                # Timeout, CSRF, flash, role guard
+│   ├── Auth.php                   # Login, OTP, lockout, remember-me, resets
+│   ├── User.php
+│   ├── Account.php
+│   ├── Transaction.php            # Atomic transfers, filters, stats
+│   ├── Beneficiary.php
+│   ├── Loan.php                   # EMI + approval workflow
+│   ├── Card.php
+│   ├── KYC.php
+│   ├── Notification.php
+│   ├── AuditLog.php
+│   ├── Mailer.php                 # PHPMailer wrapper + log fallback
+│   └── .htaccess
+│
+├── database/                      # (.htaccess protected)
+│   ├── finvault.sql               # Full schema: 12 tables
+│   ├── seed_admin.php             # Creates default admin
+│   └── .htaccess
+│
+├── assets/
+│   ├── css/
+│   │   ├── style.css              # Glassmorphism UI, dark/light themes
+│   │   └── admin.css              # Admin theme overrides
+│   ├── js/
+│   │   ├── main.js                # Theme, toasts, live search, autocomplete
+│   │   ├── charts-init.js         # Chart.js initialisation
+│   │   └── qrcode.js              # QR generate/parse (simulation)
+│   └── vendors/                   # Optional: phpmailer/, tcpdf/ go here
+│
+├── uploads/                       # KYC & profile photos (PHP exec blocked)
+├── reports/                       # Generated PDFs (.htaccess protected)
+├── logs/                          # audit.log, mail.log (.htaccess protected)
+├── composer.json                 # Composer dependencies
+├── composer.lock                 # Composer lock file
+├── vendor/                       # Composer packages
+│   ├── autoload.php              # Composer autoloader
+│   ├── composer/
+│   │   ├── ClassLoader.php
+│   │   ├── autoload_classmap.php
+│   │   ├── autoload_files.php
+│   │   ├── autoload_psr4.php
+│   │   └── ...
+│   │
+│   └── phpmailer/
+       └── phpmailer/
+│           ├── LICENSE
+│           ├── README.md
+│           ├── VERSION
+│           ├── language/
+│           └── src/
+│               ├── Exception.php
+│               ├── OAuth.php
+│               ├── PHPMailer.php
+│               ├── POP3.php
+│               └── SMTP.php
+│
