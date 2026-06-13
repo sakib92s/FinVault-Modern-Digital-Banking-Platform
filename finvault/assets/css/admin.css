@@ -1,0 +1,13 @@
+/* =====================================================
+   FinVault Admin Portal - theme overrides on style.css
+   ===================================================== */
+
+body.admin { --primary: #7c3aed; --primary-strong: #5b21b6; --accent: #2563eb; }
+
+body.admin .admin-sidebar { background: linear-gradient(180deg, #160b2e 0%, #1e1240 100%); }
+body.admin .nav-link.active { background: linear-gradient(90deg, rgba(124,58,237,.95), rgba(37,99,235,.7)); }
+body.admin .brand-logo { background: linear-gradient(135deg, #7c3aed, #2563eb); box-shadow: 0 4px 14px rgba(124, 58, 237, .45); }
+body.admin .admin-avatar { background: linear-gradient(135deg, #7c3aed, #db2777); }
+
+body.admin .stat-card.kpi { border-top: 3px solid var(--primary); }
+body.admin tr.flagged td { border-left: 3px solid var(--neg); }
