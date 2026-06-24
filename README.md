@@ -149,7 +149,7 @@ Set:
 
 Default credentials:
 
-Email: admin@finvault.local
+Email: sakib1@gmail.com
 Password: password
 
 
@@ -160,7 +160,7 @@ php database/seed_admin.php
 
 Default password:
 
-Admin@123
+password
 
 
 ---
