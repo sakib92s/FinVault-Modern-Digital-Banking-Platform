@@ -8,6 +8,12 @@ It replicates real-world banking workflows such as authentication, transactions,
 
 No real money, no external banking APIs — everything is internally simulated for learning, system design practice, and portfolio demonstration.
 
+![FinVault Dashboard](screenshots/dashboard.png)
+
+> **More Screenshots:**  
+> All project screenshots are available in the **`screenshots/`** folder.
+> Click here to view them: **[📂 screenshots](screenshots/)**
+
 ---
 
 ## 🧩 System Architecture
